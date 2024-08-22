@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 // ADD a new appointment
 router.post('/', (req, res) => {
     const { patient_id, doctor_id, appointment_date, status } = req.body;
-    db.query('INSERT INTO appointments (patient_id, doctor_id, appointment_date, status) VALUES (?, ?, ?, ?)', 
+    db.query('INSERT INTO appointments (patient_id, doctor_id, appointment_date, status) VALUES (?, ?, ?, ?)',   //status:'Admitted', 'Discharged', 'In Treatment'
     [patient_id, doctor_id, appointment_date, status], 
     (err, results) => {
         if (err) {
